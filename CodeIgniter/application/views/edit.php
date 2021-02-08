@@ -13,7 +13,7 @@
 </div>
 	<div class="container" style="padding-top: 10px;">
 		<h3>Update User</h3>
-		<form method="post" name="createUser" action="<?php echo base_url().'index.php/user/edit'.$user['user_id'];?>">
+		<form method="post" name="createUser" action="<?php echo base_url().'index.php/user/edit/'.$user['user_id'];?>">
 			<div class="row">
 				<div class="col-md-6">
 					<div class="form-group">
@@ -27,7 +27,7 @@
 						<?php echo form_error('email');?>
 					</div>
 					<div class="form-group">
-						<button class="btn btn-primary">Update</button>
+						<button class="btn btn-primary" >Update</button>
 						<a href="<?php echo base_url().'index.php/user/index';?>" class="btn-secondary btn">Cancel</a>
 					</div>
 				</div>	

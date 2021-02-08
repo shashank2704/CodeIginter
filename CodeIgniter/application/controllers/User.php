@@ -1,8 +1,5 @@
 <?php
 
-
-
-
 class User extends CI_Controller
 {
 
@@ -65,34 +62,32 @@ class User extends CI_Controller
 		$this->form_validation->set_rules('name','Name','required');
 		$this->form_validation->set_rules('email','Email','required|valid_email');
 
-		if($this->form_validation->run()==false)
-		{
+		if($this->form_validation->run()==false){
 			$this->load->view('edit',$data);
-		}
-
-		else
-		{
+		} else {
 			//update set record
 			$formsArray=array();
 			$formsArray['name']= $this->input->post('name');
 			$formsArray['email']= $this->input->post('email');
 			$this->User_model->updateUser($userId,$formsArray);
-
 			$this->session->set_flashdata('success','Record Update successfully');
+			redirect(base_url().'index.php/user/index');	
+		}
+	}
+
+	function delete($userId)
+	{
+		$this->load->model('User_model');
+		$user = $this->User_model->getUser($userId);
+		if (empty($user))
+		{
+			$this->session->set_flashdata('failure','Record not found in database');
 			redirect(base_url().'index.php/user/index');
 		}
 
-
-
-
-
-
-		
-
-
-
-
-
+		$this->User_model->deleteUser($userId);
+		$this->session->set_flashdata('success','Record deleted from database');
+			redirect(base_url().'index.php/user/index');
 	}
 }
 

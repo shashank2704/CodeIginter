@@ -32,6 +32,14 @@ class User_model extends CI_model
 		//Update users SET name=?, email=? where user_id=?
 	}
 
+	function deleteUser($userId)
+	{
+		$this->db->where('user_id',$userId);
+		$this->db->delete('crud');
+		// DELETE FROM crud where user_id = ?
+
+	}
+
 
 
 }
