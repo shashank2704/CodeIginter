@@ -18,10 +18,16 @@
     <![endif]-->
   </head>
   <body>
+    <div class="navbar navbar-dark bg-dark">
+      <div class="container">
+        <a href="#" class="navbar-brand"><h2>Login Page</h2></a>
+         <a href="<?php echo base_url().'index.php/auth/register';?>" class="btn btn-primary">Sign Up</a>
+      </div>
+   
+    </div>
   
     <div class="col-lg-5 col-lg-offset-2">
-      <h1>Login Page</h1>
-      <p>Fill in the details to login on our website</p>
+     <h5> <p>Fill in the details to login on our website</p></h5>
   <?php if(isset($_SESSION['success'])) 
   { ?>
     <div class ="alert alert-success"><?php echo $_SESSION['success']; ?></div>

@@ -29,7 +29,7 @@ class Auth extends CI_Controller
 
 			 	$_SESSION['user_logged']=TRUE;
 			 	$_SESSION['username']=$user->username;
-			 	redirect("user/profile","refresh");
+			 	redirect("user/index","refresh");
 
 
 			 }

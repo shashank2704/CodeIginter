@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +11,14 @@
 <div class="navbar navbar-dark bg-dark">
 	<div class="container">
 		<a href="#" class="navbar-brand">CRUD Application</a>
+		<a href="#" class="navbar-brand">
+			HELLO, <?php echo $_SESSION['username'];?>
+		</a>
+		<a href="#" class="btn btn-primary">Edit</a>
 	</div>
+		<a href="<?php echo base_url().'index.php/auth/login';?>" class="btn btn-primary">LogOut</a>
+		
+	
 </div>
 	<div class="container" style="padding-top: 10px;">
 	<div class="row">
